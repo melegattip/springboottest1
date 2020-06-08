@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 import java.util.ArrayList;
 import java.util.List;
 
-@Component("Converter")
+@Component("converter")
 public class Converter {
     public List<Mannotates> convertList (List<Annotates> annotatesList){
         List<Mannotates> mannotatesList = new ArrayList<>();

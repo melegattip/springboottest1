@@ -1,10 +1,11 @@
 package com.example.demo.entity;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Table(name="annotates")
 @Entity
-public class Annotates {
+public class Annotates implements Serializable {
     @GeneratedValue
     @Id
 
@@ -20,8 +21,7 @@ public class Annotates {
     @Column(name = "Content")
     private String content;
 
-    public Annotates(){
-    }
+    public Annotates(){}
     public Annotates(long id, String name, String title, String content) {
         this.id = id;
         this.name = name;

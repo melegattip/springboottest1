@@ -3,18 +3,18 @@ package com.example.demo.service;
 import com.example.demo.converter.Converter;
 import com.example.demo.entity.Annotates;
 import com.example.demo.model.Mannotates;
-import com.example.demo.repository.RepositoryAnnotates;
+import com.example.demo.repository.AnnotatesRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@Service
-public class AnnotateService {
+@Service("service")
+public class AnnotatesService {
     @Autowired
     @Qualifier("repository")
-    private RepositoryAnnotates repository;
+    private AnnotatesRepository repository;
 
     @Autowired
     @Qualifier("converter")

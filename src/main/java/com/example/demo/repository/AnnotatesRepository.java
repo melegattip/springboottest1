@@ -8,7 +8,7 @@ import java.io.Serializable;
 import java.util.List;
 
 @Repository("repository")
-public interface RepositoryAnnotates extends JpaRepository<Annotates, Serializable> {
+public interface AnnotatesRepository extends JpaRepository<Annotates, Serializable> {
     public abstract Annotates findByName (String name);
     public abstract List<Annotates> findByTitle (String title);
     public abstract Annotates findByNameAndTitle (String name, String title);

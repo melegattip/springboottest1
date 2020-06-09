@@ -4,6 +4,8 @@ import com.example.demo.converter.Converter;
 import com.example.demo.entity.Annotates;
 import com.example.demo.model.Mannotates;
 import com.example.demo.repository.AnnotatesRepository;
+import org.apache.juli.logging.Log;
+import org.apache.juli.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
@@ -20,10 +22,13 @@ public class AnnotatesService {
     @Qualifier("converter")
     private Converter converter;
 
+    private static final Log logger = LogFactory.getLog(AnnotatesService.class);
+
     public boolean create(Annotates annotate) {
+        logger.info("Creating Annotate");
         try {
             repository.save(annotate);
-
+            logger.info("Annotate Created");
             return true;
         } catch (Exception e) {
             return false;

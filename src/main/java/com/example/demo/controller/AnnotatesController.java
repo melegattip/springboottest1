@@ -1,11 +1,14 @@
 package com.example.demo.controller;
 
 import com.example.demo.entity.Annotates;
+import com.example.demo.model.Mannotates;
 import com.example.demo.service.AnnotatesService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/v1")
@@ -31,6 +34,11 @@ public class AnnotatesController {
     public boolean deleteAnnotate (@PathVariable("id") long id, @PathVariable("name") String name){
 
         return service.delete(name, id);
+    }
+
+    @GetMapping("/annotates")
+    public List<Mannotates> getAnnotates(){
+        return service.get();
     }
 
 }
